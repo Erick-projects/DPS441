@@ -1,4 +1,20 @@
-# DPS441-
+# DPS441
+
+## Integrantes del Grupo
+
+**Grupo: G01T**
+- Erick Francisco Magaña Ramos. MR230130.
+- Jorge Alexander Martinez Gonzalez. MG232198.
+-	Alisson Yasmin Vivas Castro. VC230868.
+-	Emerson Josue Gabriel Rosales. GR232330.
+- Heysel Guadalupe Argueta Hernández. AH230907.
+- Andrés de Jesús Montano Gonzalez. MG230176.
+
+## Enlaces Relevantes.
+
+- [Notion - DPS441] (https://www.notion.so/invite/35ecd56827b4d68a44e81afcf47cfec0ee5c9269).
+- [Repositorio en GitHub] 
+  
 # MOCKUPS
 ![Android Small - 1](https://github.com/Erick-projects/DPS441-/assets/124595071/498bd0f9-bba4-4df9-8ffb-5ad53a09dfe7)
 ![Android Small - 2](https://github.com/Erick-projects/DPS441-/assets/124595071/5bab3f4c-448e-4580-b68a-e61e9a14f09a)
