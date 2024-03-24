@@ -7,3 +7,25 @@
 ![Android Small - 5](https://github.com/Erick-projects/DPS441-/assets/124595071/766d2613-bd09-4951-a19d-4c90cda17a4c)
 ![Android Small - 6](https://github.com/Erick-projects/DPS441-/assets/124595071/1609d984-c5e2-432a-b305-ec28c2437d9e)
 ![Android Small - 7](https://github.com/Erick-projects/DPS441-/assets/124595071/494c0937-1752-4d9c-8166-875c4d3bbe58)
+
+## Licencias Creative Commons
+
+- **Código:**
+  <div class="footer-license">
+            <p>&copy; 2024 Todos los derechos reservados. | Storesv
+                <span xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms">
+                    <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                        rel="license noopener noreferrer" style="display:inline-block;">
+                        CC BY-NC-ND 4.0
+                        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+                        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
+                        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1">
+                        <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                            src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1">
+                    </a>
+                </span>
+            </p>
+        </div>
