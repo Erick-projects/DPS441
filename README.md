@@ -13,7 +13,7 @@
 ## Enlaces Relevantes.
 
 - [Notion - DPS441] (https://www.notion.so/invite/35ecd56827b4d68a44e81afcf47cfec0ee5c9269).
-- [Repositorio en GitHub] 
+- [Repositorio en GitHub] (https://github.com/Erick-projects/DPS441.git).
   
 # MOCKUPS
 ![Android Small - 1](https://github.com/Erick-projects/DPS441-/assets/124595071/498bd0f9-bba4-4df9-8ffb-5ad53a09dfe7)
