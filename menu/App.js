@@ -13,6 +13,7 @@ import Deportes from './components/Deportes';
 import Hogar from './components/Hogar';
 import Ropa from './components/Ropa';
 import Login from './components/Login';
+import Pago from './components/Pago';
 
 const app = initializeApp(firebaseConfig);
 
@@ -112,6 +113,7 @@ export default function App() {
           <Drawer.Screen name="Deportes" component={Deportes} />
           <Drawer.Screen name="Hogar" component={Hogar} />
           <Drawer.Screen name="Ropa" component={Ropa} />
+          <Drawer.Screen name="Pago" component={Pago} />
         </Drawer.Navigator>
       )}
     </NavigationContainer>
