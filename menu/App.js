@@ -48,7 +48,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Función para iniciar sesión
+  // Función para crear cuenta
   const handleCreateAccount = () => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
@@ -63,6 +63,7 @@ export default function App() {
       });
   };
 
+  //funcion para iniciar sesion
   const handleSignIn = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -76,6 +77,18 @@ export default function App() {
       })
   }
 
+  //cerrar sesion
+  const handleSignOut = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        setIsLoggedIn(false);
+        Alert.alert('Sesion cerrada')
+      })
+      .catch(error => console.log(error));
+  };
+
+  //estado de inicio de sesion en true
   const onLogin = () => {
     setIsLoggedIn(true);
   };
@@ -114,6 +127,7 @@ export default function App() {
           <Drawer.Screen name="Hogar" component={Hogar} />
           <Drawer.Screen name="Ropa" component={Ropa} />
           <Drawer.Screen name="Pago" component={Pago} />
+           <Drawer.Screen name="Cerrar sesión" component={handleSignOut} options={{ headerShown: false }} />
         </Drawer.Navigator>
       )}
     </NavigationContainer>
