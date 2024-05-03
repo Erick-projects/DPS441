@@ -59,7 +59,7 @@ export default function App() {
       })
       .catch(error => {
         console.log(error)
-        Alert.alert(error.message)
+        Alert.alert('Ingresa una cuenta valida')
       });
   };
 
@@ -73,7 +73,7 @@ export default function App() {
       })
       .catch(error => {
         console.log(error)
-        Alert.alert(error.message);
+        Alert.alert('Cuenta no encontrada');
       })
   }
 
