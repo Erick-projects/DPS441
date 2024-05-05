@@ -7,6 +7,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { Image, Text, TouchableWithoutFeedback, View, Keyboard, Alert } from 'react-native';
 import { firebaseConfig } from './firebase-config';
+import CarritoIcon from './components/CarritoIcon';
 import Principal from './components/Principal';
 import Electronicos from './components/Electronicos';
 import Deportes from './components/Deportes';
@@ -14,6 +15,8 @@ import Hogar from './components/Hogar';
 import Ropa from './components/Ropa';
 import Login from './components/Login';
 import Pago from './components/Pago';
+import CarritoScreen from './components/CarritoScreen';
+import ProductList from './components/ProductList';
 
 const app = initializeApp(firebaseConfig);
 
@@ -47,6 +50,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+    const [carrito, setCarrito] = useState([]);
 
   // Función para crear cuenta
   const handleCreateAccount = () => {
@@ -92,6 +96,27 @@ export default function App() {
   const onLogin = () => {
     setIsLoggedIn(true);
   };
+  const agregarAlCarrito = (producto, cantidad) => {
+    // Función para agregar un producto al carrito
+    const productoExistente = carrito.find((item) => item.producto.id === producto.id);
+
+    if (productoExistente) {
+      setCarrito(
+        carrito.map((item) =>
+          item.producto.id === producto.id ? { ...item, cantidad: item.cantidad + cantidad } : item
+        )
+      );
+    } else {
+      setCarrito([...carrito, { producto, cantidad }]);
+    }
+  };
+
+  const eliminarProductoCarrito = (productoId) => {
+    
+    // Función para eliminar un producto del carrito
+    const nuevoCarrito = carrito.filter((item) => item.producto.id !== productoId);
+    setCarrito(nuevoCarrito);
+  };
 
   return (
     <NavigationContainer>
@@ -114,7 +139,7 @@ export default function App() {
           headerStyle: {
             backgroundColor: '#98C1D9',
           },
-          headerRight: () => <Carrito />,
+         headerRight: () => <CarritoIcon />,
           headerTitle: () => <Logo />,
           headerTitleAlign: 'center',
           drawerActiveTintColor: '#3D5A80',
@@ -122,14 +147,21 @@ export default function App() {
           drawerLabelStyle: { fontSize: 20 },
         }}>
           <Drawer.Screen name="Inicio" component={Principal} options={{ drawerIcon: () => <Icon /> }} />
-          <Drawer.Screen name="Electronicos" component={Electronicos} />
-          <Drawer.Screen name="Deportes" component={Deportes} />
-          <Drawer.Screen name="Hogar" component={Hogar} />
-          <Drawer.Screen name="Ropa" component={Ropa} />
+                <Drawer.Screen name="Electronicos" component={() => <Electronicos agregarAlCarrito={agregarAlCarrito} />} />
+          <Drawer.Screen name="Deportes" component={() => <Deportes agregarAlCarrito={agregarAlCarrito} />} />
+          <Drawer.Screen name="Hogar" component={() => <Hogar agregarAlCarrito={agregarAlCarrito} />} />
+          <Drawer.Screen name="Ropa" component={() => <Ropa agregarAlCarrito={agregarAlCarrito} />} />
           <Drawer.Screen name="Pago" component={Pago} />
-           <Drawer.Screen name="Cerrar sesión" component={handleSignOut} options={{ headerShown: false }} />
+          <Drawer.Screen name="Cerrar sesión" component={handleSignOut} options={{ headerShown: false }} />
+          <Drawer.Screen 
+            name="CarritoScreen" 
+            component={() => <CarritoScreen carrito={carrito} setCarrito={setCarrito} eliminarProductoCarrito={eliminarProductoCarrito} />} 
+            options={{ drawerLabel: () => null }} 
+          />
+          <Drawer.Screen name="ProductList" component={ProductList} options={{ drawerLabel: () => null }} />
         </Drawer.Navigator>
       )}
     </NavigationContainer>
   );
 }
+
