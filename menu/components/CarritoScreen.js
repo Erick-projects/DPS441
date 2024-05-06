@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // Importa useNavigation
 
 const CarritoScreen = ({ carrito, setCarrito }) => {
-  
+  const navigation = useNavigation(); // Obtiene la instancia de navigation
+
   const calcularSubtotal = () => {
     let subtotal = 0;
     if (carrito && carrito.length > 0) {
@@ -48,7 +50,7 @@ const CarritoScreen = ({ carrito, setCarrito }) => {
             <Text style={styles.subtotalText}>Subtotal: ${calcularSubtotal()}</Text>
             <TouchableOpacity 
               style={styles.comprarButtonContainer} 
-              onPress={() => console.log('Comprar')}
+              onPress={() => navigation.navigate('Pago')} // Navega a la pantalla Pago.js
             >
               <Text style={styles.comprarButtonText}>Comprar</Text>
             </TouchableOpacity>
@@ -60,18 +62,18 @@ const CarritoScreen = ({ carrito, setCarrito }) => {
 };
 
 const styles = StyleSheet.create({
- container: {
-  flex: 1,
-  backgroundColor: '#98c1d9',
-  padding: 16,
-  width: '90%',
-  height: '80%',
-  alignSelf: 'center',
-  marginTop: '5%',
-  marginBottom: '10%',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-},
+  container: {
+    flex: 1,
+    backgroundColor: '#98c1d9',
+    padding: 16,
+    width: '90%',
+    height: '80%',
+    alignSelf: 'center',
+    marginTop: '5%',
+    marginBottom: '10%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
   productoCarritoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 15, 
     marginTop: 10,
     alignSelf: 'center',
-      width: '40%',
+    width: '40%',
   },
   comprarButtonText: {
     color: 'white', 
