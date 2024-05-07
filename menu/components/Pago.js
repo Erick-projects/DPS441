@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Alert, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Alert, TextInput, TouchableOpacity, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import RadioButtons from '../components/RadioButtons';
 
 export default function App() {
+
+    // Ocultar el teclado
+    const cerrarTeclado = () => { Keyboard.dismiss(); }
+    
     const [direccionEnvio, setDireccionEnvio] = useState('');
     const [metodoPago, setMetodoPago] = useState('');
     const [mostrarInputTarjeta, setMostrarInputTarjeta] = useState(false);
@@ -79,6 +83,7 @@ export default function App() {
     };
 
     return (
+                <TouchableWithoutFeedback onPress={() => cerrarTeclado()}>
         <View style={styles.container}>
             <Text style={styles.label}>Dirección de Envío:</Text>
             <TextInput
@@ -123,6 +128,7 @@ export default function App() {
                 </TouchableOpacity>
             </View>
         </View>
+        </TouchableWithoutFeedback>
     );
 }
 
