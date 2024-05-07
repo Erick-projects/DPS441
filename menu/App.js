@@ -161,6 +161,9 @@ export default function App() {
           <Drawer.Screen name="ProductList" component={ProductList} options={{ drawerLabel: () => null }} />
         </Drawer.Navigator>
       )}
+      <View style={{ alignItems: 'center', marginTop: 20 }}>
+        <Text style={{ color: 'blue', textDecorationLine: 'underline' }} onPress={() => Linking.openURL('https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1')}>Licencia Creative Commons</Text>
+      </View>
     </NavigationContainer>
   );
 }
